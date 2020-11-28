@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fefefe"
+    tools:context=".NotepadActivity">
+
+    <TextView
+        android:id="@+id/note_name"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:textSize="20sp"
+        android:textColor="@android:color/white"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:background="#fb7a6a"
+        android:text="记事本" />
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="#00000000"
+        android:divider="#E4E4E4"
+        android:dividerHeight="1dp"
+        android:fadingEdge="none"
+        android:listSelector="#00000000"
+        android:scrollbars="none"
+        android:layout_below="@+id/note_name">
+    </ListView>
+    <Button
+        android:id="@+id/btn_change_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_above="@+id/add"
+        android:text="管理作者信息"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp" />
+    <Button
+        android:id="@+id/add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_above="@+id/btn_exit"
+        android:text="添加日志"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp" />
+    <Button
+        android:id="@+id/btn_exit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:text="退出登录"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp" />
+</RelativeLayout>
