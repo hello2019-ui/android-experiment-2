@@ -10,11 +10,12 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Regist extends AppCompatActivity {
+public class Regist extends AppCompatActivity implements View.OnClickListener {
     private EditText edt_setusername;
     private EditText edt_setpassword;
     private EditText edt_confirm_password;
@@ -22,6 +23,7 @@ public class Regist extends AppCompatActivity {
     String name, password, id;
     private MyDB myDB;
     ContentValues contentValues = new ContentValues();
+    ImageView back_to_login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,6 +93,8 @@ public class Regist extends AppCompatActivity {
         edt_setpassword = findViewById(R.id.edt_setpassword);
         edt_confirm_password = findViewById(R.id.edt_confirm_password);
         btn_register = findViewById(R.id.btn_register);
+        back_to_login = findViewById(R.id.back_to_login);
+        back_to_login.setOnClickListener(this);
     }
 
     /**
@@ -106,5 +110,14 @@ public class Regist extends AppCompatActivity {
             return true;
         } else
             return false;
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.back_to_login:
+                finish();
+                break;
+        }
     }
 }

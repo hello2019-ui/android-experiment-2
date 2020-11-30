@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:textSize="15sp"
         android:paddingTop="10dp"
-        android:paddingBottom="10dp"
+        android:paddingBottom="1dp"
         android:gravity="center"
         android:visibility="gone"
         android:textColor="#fb7a6a"/>
@@ -43,12 +43,18 @@
         android:id="@+id/note_title"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="3"
+        android:layout_weight="2"
+        android:layout_marginTop="20dp"
         android:gravity="top"
         android:hint="请输入标题"
+        android:textColorHint="#E4E4E4"
         android:paddingLeft="10dp"
         android:textColor="@android:color/black"
         android:background="#fefefe"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E4E4E4"/>
     <EditText
         android:id="@+id/note_content"
         android:layout_width="match_parent"
@@ -57,6 +63,7 @@
         android:gravity="top"
         android:hint="请输入要添加的内容"
         android:paddingLeft="5dp"
+        android:textColorHint="#E4E4E4"
         android:textColor="@android:color/black"
         android:background="#fefefe"/>
     <View

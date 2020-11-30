@@ -74,8 +74,8 @@ public class RecordActivity extends AppCompatActivity implements View.OnClickLis
 
             //按删除键
             case R.id.delete:
-                title.setText(" ");
-                content.setText(" ");
+                title.setText("");
+                content.setText("");
                 break;
 
             //保存键

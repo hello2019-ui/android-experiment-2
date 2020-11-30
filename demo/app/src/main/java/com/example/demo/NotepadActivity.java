@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -18,7 +19,7 @@ import com.example.demo.adapter.NotepadAdapter;
 import com.example.demo.bean.NotepadBean;
 import com.example.demo.database.SQLiteHelper;
 
-public class NotepadActivity extends AppCompatActivity {
+public class NotepadActivity extends AppCompatActivity implements View.OnClickListener{
     private ListView listView;
     private SQLiteHelper mSQLiteHelper;
     private List<NotepadBean> list;
@@ -29,11 +30,13 @@ public class NotepadActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         listView=findViewById(R.id.listview);
-        Button imageView=findViewById(R.id.add);
+        Button add=findViewById(R.id.add);
         Button author=findViewById(R.id.btn_change_author);
         Button exit=findViewById(R.id.btn_exit);
+        ImageView over=findViewById(R.id.note_over);
+        over.setOnClickListener(this);
         initData();
-        imageView.setOnClickListener(new View.OnClickListener() {
+        add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(NotepadActivity.this,RecordActivity.class);
@@ -52,6 +55,7 @@ public class NotepadActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent=new Intent(NotepadActivity.this, Login.class);
                 startActivityForResult(intent,1);
+                NotepadActivity.this.finish();
             }
         });
     }
@@ -119,6 +123,14 @@ public class NotepadActivity extends AppCompatActivity {
         super.onActivityResult(requestCode,resultCode,data);
         if (requestCode==1&&resultCode==2){
             showQueryData();
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.note_over:
+                System.exit(0);
         }
     }
 }

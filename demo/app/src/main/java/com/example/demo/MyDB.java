@@ -11,12 +11,6 @@ public class MyDB extends SQLiteOpenHelper {
             "user_id integer primary key autoincrement," +
             "username varchar(50)," +
             "password varchar(50))";
-    //
-    public static final String CREATE_NOTE="create table tb_note("+
-            "ID integer primary key AUTOINCREMENT,"+
-            "content TEXT NOT NULL,"+
-            "userID  integer,"+
-            "time TEXT NOT NULL)";
 
     //上下文
     private  Context mcontext;
@@ -29,7 +23,6 @@ public class MyDB extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_USER);
-        db.execSQL(CREATE_NOTE);
         Toast.makeText(mcontext,"创建成功！",Toast.LENGTH_SHORT).show();
     }
     @Override
